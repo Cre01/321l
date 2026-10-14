@@ -1,0 +1,609 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff1f7">
+<title>For My Wajd ♡</title>
+
+<style>
+:root {
+  --pink: #ff78a9;
+  --deep: #d94d87;
+  --ink: #58384d;
+  --muted: #98758b;
+  --line: #ffe0ec;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Trebuchet MS", system-ui, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #fff8fc,
+    #ffeaf3 48%,
+    #f1ebff
+  );
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.sky {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.twinkle {
+  position: absolute;
+  opacity: .7;
+  animation: drift 6s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-19px) rotate(12deg);
+  }
+}
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  width: min(760px, 92%);
+  margin: auto;
+  padding: 22px 0 48px;
+}
+
+.hero {
+  text-align: center;
+  padding: 32px 8px 20px;
+}
+
+.eyebrow {
+  display: inline-block;
+  border: 1px solid #ffd0e2;
+  background: #ffffffb8;
+  border-radius: 999px;
+  padding: 9px 15px;
+  font-size: .82rem;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 10vw, 5.5rem);
+  line-height: .98;
+  letter-spacing: -.065em;
+  margin: 24px 0 16px;
+}
+
+h1 em {
+  font-style: normal;
+  color: var(--deep);
+}
+
+.subtitle {
+  max-width: 570px;
+  margin: auto;
+  color: #87667c;
+  line-height: 1.85;
+  font-size: 1.04rem;
+}
+
+.card {
+  margin: 18px 0;
+  padding: clamp(21px, 5vw, 36px);
+  border: 1px solid white;
+  border-radius: 28px;
+  background: #ffffffd9;
+  box-shadow: 0 16px 45px #d879a51c;
+  backdrop-filter: blur(10px);
+}
+
+.hero-heart {
+  font-size: 3.5rem;
+  display: block;
+  animation: heartbeat 1.8s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.14); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.1); }
+}
+
+h2 {
+  text-align: center;
+  font-size: clamp(1.35rem, 4vw, 1.8rem);
+  margin: 8px 0 17px;
+}
+
+p {
+  line-height: 1.95;
+}
+
+.center {
+  text-align: center;
+}
+
+.pink {
+  color: var(--deep);
+  font-weight: 800;
+}
+
+.note {
+  font-size: 1.04rem;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ffc6dc,
+    transparent
+  );
+  margin: 22px 0;
+}
+
+.steps {
+  display: grid;
+  gap: 12px;
+}
+
+.step {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  background: #fff6fa;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px;
+}
+
+.emoji {
+  font-size: 1.55rem;
+}
+
+.step b {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.step span:last-child {
+  line-height: 1.65;
+}
+
+.btn {
+  width: 100%;
+  border: 0;
+  border-radius: 16px;
+  padding: 15px 18px;
+  background: linear-gradient(
+    100deg,
+    #ff79a9,
+    #efa0d1
+  );
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 8px 20px #ed78a44a;
+  transition: transform .2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.secret {
+  display: none;
+  margin-top: 16px;
+  background: #fff0f7;
+  border: 1px dashed #ffb4d1;
+  border-radius: 20px;
+  padding: 18px;
+  line-height: 1.95;
+}
+
+.secret.show {
+  display: block;
+  animation: pop .4s ease;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.meter {
+  height: 11px;
+  background: #f7dce8;
+  border-radius: 99px;
+  overflow: hidden;
+  margin: 18px 0 9px;
+}
+
+.meter div {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    #ff79a9,
+    #c4a3ff
+  );
+}
+
+.stamp {
+  display: inline-block;
+  background: #fff0f6;
+  border: 1px solid #ffd3e4;
+  border-radius: 16px;
+  padding: 12px 16px;
+  margin: 6px 0;
+  font-weight: 800;
+  color: var(--deep);
+}
+
+footer {
+  text-align: center;
+  color: #a18196;
+  font-size: .83rem;
+  padding: 12px;
+}
+
+.heart {
+  color: #f0649c;
+}
+
+.floating {
+  position: fixed;
+  bottom: -35px;
+  z-index: 10;
+  pointer-events: none;
+  animation: rise 3.3s ease-in forwards;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+.small {
+  font-size: .91rem;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="sky" id="sky" aria-hidden="true"></div>
+
+<main class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">
+      A little corner of the internet, made only for you ♡
+    </div>
+
+    <h1>
+      HEY, MY<br>
+      <em>FAVORITE</em><br>
+      GIRL ✿
+    </h1>
+
+    <span class="hero-heart">💗</span>
+
+    <p class="subtitle">
+      Your first midterm is DONE, baby!!
+      I hope you're giving yourself a little credit today,
+      because someone over here is smiling so hard
+      and feeling ridiculously proud of you.
+    </p>
+  </header>
+
+  <section class="card">
+    <h2>To my Wajd, my love letter 💌</h2>
+
+    <p class="note">
+      I wish I could borrow your eyes for a second,
+      just so you could see what I see when I look at you.
+      I see a girl with so much potential, a beautiful heart,
+      and a future worth working for.
+      I see the effort behind the scenes — the studying,
+      the pressure, the little worries, and the way you
+      keep moving forward even when things feel like a lot.
+    </p>
+
+    <p class="note">
+      And today, you finished your first midterm.
+      That might look like one small thing on a calendar,
+      but to me it's another little step toward everything
+      you're dreaming of.
+      <span class="pink">
+        I'm so, so, SO proud of you, sweetheart.
+      </span>
+    </p>
+
+    <p class="note">
+      Not just if you get the grade you want.
+      Not just when everything goes perfectly.
+      I'm proud of you because you tried,
+      because you showed up, and because you're doing your best.
+      You never have to earn my pride by being perfect.
+      <span class="pink">
+        You already make me proud just by being you.
+      </span> 🥹
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Things I need my girl to remember 🎀</h2>
+
+    <div class="steps">
+
+      <div class="step">
+        <span class="emoji">🌷</span>
+        <span>
+          <b>You are not your grades.</b>
+          Your grades can describe one exam;
+          they could never describe your whole heart,
+          your intelligence, or how special you are.
+        </span>
+      </div>
+
+      <div class="step">
+        <span class="emoji">✨</span>
+        <span>
+          <b>I notice the little steps.</b>
+          The pages you study, the time you put in,
+          the moments you push through, even the effort
+          nobody claps for. It matters. You matter.
+        </span>
+      </div>
+
+      <div class="step">
+        <span class="emoji">🧸</span>
+        <span>
+          <b>You are allowed to rest, baby.</b>
+          You don't need to be productive every second.
+          Eat something, drink water, relax those pretty
+          shoulders, and let your mind breathe.
+        </span>
+      </div>
+
+      <div class="step">
+        <span class="emoji">🌙</span>
+        <span>
+          <b>You don't have to feel strong every day.</b>
+          On the days you're confident, I'll cheer for you.
+          On the days you doubt yourself, I'll remind you
+          how much you can do. On the tired days,
+          I'll remind you to be gentle with yourself.
+        </span>
+      </div>
+
+      <div class="step">
+        <span class="emoji">🫶</span>
+        <span>
+          <b>Your dreams matter to me.</b>
+          I care about every step because I care about
+          the person taking them. I want you to feel
+          supported, loved, and celebrated through all
+          the little chapters that make up your big story.
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="card center">
+    <div style="font-size:3rem">🏆</div>
+
+    <h2>Achievement unlocked!</h2>
+
+    <div class="stamp">
+      FIRST MIDTERM: SURVIVED ♡
+    </div>
+
+    <div class="meter">
+      <div></div>
+    </div>
+
+    <p>
+      <b>
+        100% effort celebrated ·
+        100% my favorite girl ·
+        1000% loved
+      </b>
+    </p>
+
+    <p class="small">
+      Official scientific results from the very serious
+      Department of Me Being Proud of You.
+    </p>
+
+    <button class="btn" id="letterButton">
+      Open your tiny surprise, pretty girl 💌
+    </button>
+
+    <div class="secret" id="secret" aria-live="polite">
+      Wajd, my baby, take a deep breath for me.
+      You made it through today, and I'm so happy you did.
+      I hope you know that behind every goal you're chasing,
+      there is someone who cares about how you're feeling
+      along the way — not only where you end up.
+
+      <br><br>
+
+      I want to celebrate your big wins, but I also want
+      to celebrate the quiet things: when you try again,
+      when you learn something hard, when you keep going
+      even if you're scared, and when you choose to rest
+      because you need it.
+
+      I want you to feel like someone is in your corner,
+      paying attention, rooting for you, and loving you
+      through it all.
+
+      <br><br>
+
+      <b>
+        I'm proud of you today, I'll be proud of you tomorrow,
+        and I'll be proud of you on the days when you forget
+        how amazing you are.
+      </b>
+
+      <br><br>
+
+      Now imagine me giving you the biggest, longest hug ever
+      and kissing your forehead like a million times.
+      You did good, my smart girl. So, so good.
+      🥹💗🫂
+    </div>
+  </section>
+
+  <section class="card center">
+    <div style="font-size:2.5rem">🌸 🩷 🌸</div>
+
+    <h2>One midterm down. A whole future to bloom into.</h2>
+
+    <p>
+      Keep going at your own pace, my love.
+      You don't have to have everything figured out today.
+      Just take the next little step, and then the next.
+      I hope this website reminds you that every single
+      one of those steps is worth celebrating.
+    </p>
+
+    <p class="pink">
+      I believe in you so much, Wajd.
+    </p>
+
+    <p>
+      And if you ever forget how special you are,
+      come back here and let me remind you. ♡
+    </p>
+
+    <div class="divider"></div>
+
+    <p style="font-size:1.1rem">
+      <b>Made with all my love, for my favorite person.</b>
+      <br>
+      <span class="heart">♥ ♥ ♥</span>
+    </p>
+  </section>
+
+  <footer>
+    Coded with love, a little bit of pink,
+    and a very proud heart ♡
+  </footer>
+
+</main>
+
+<script>
+const sky = document.getElementById("sky");
+
+const symbols = ["✦", "♡", "✧", "♥", "⋆", "✿"];
+
+for (let i = 0; i < 38; i++) {
+  const el = document.createElement("span");
+
+  el.className = "twinkle";
+  el.textContent =
+    symbols[Math.floor(Math.random() * symbols.length)];
+
+  el.style.left = Math.random() * 100 + "%";
+  el.style.top = Math.random() * 100 + "%";
+  el.style.fontSize = (12 + Math.random() * 20) + "px";
+  el.style.animationDelay = (Math.random() * -7) + "s";
+  el.style.animationDuration = (4 + Math.random() * 6) + "s";
+
+  el.style.color = [
+    "#f477a6",
+    "#b59af7",
+    "#ffabc9"
+  ][i % 3];
+
+  sky.appendChild(el);
+}
+
+function sprinkle() {
+  for (let i = 0; i < 32; i++) {
+    const el = document.createElement("span");
+
+    el.className = "floating";
+    el.textContent = ["💗", "✨", "🌸", "💕", "🎀"][i % 5];
+
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.fontSize = (16 + Math.random() * 18) + "px";
+    el.style.animationDuration =
+      (2.4 + Math.random() * 1.8) + "s";
+
+    document.body.appendChild(el);
+
+    setTimeout(() => el.remove(), 4500);
+  }
+}
+
+const btn = document.getElementById("letterButton");
+const secret = document.getElementById("secret");
+
+btn.addEventListener("click", () => {
+  secret.classList.toggle("show");
+
+  const open = secret.classList.contains("show");
+
+  btn.textContent = open
+    ? "Close your tiny surprise 💗"
+    : "Open your tiny surprise, pretty girl 💌";
+
+  if (open) {
+    sprinkle();
+
+    secret.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest"
+    });
+  }
+});
+</script>
+
+</body>
+</html>
